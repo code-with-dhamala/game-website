@@ -234,24 +234,22 @@ export default function GameGrid() {
       : games.filter((game) => game.category === activeCategory);
 
   return (
-    <div className="container mx-auto px-6 py-16">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-white mb-4">Game Collection</h2>
-        <p className="text-slate-400 text-lg">
-          Choose from our premium selection of games
-        </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mt-4"></div>
+    <div className="container mx-auto px-4 py-4">
+      <div className="text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-4">Game Collection</h2>
+
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mt-4"></div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
         {categories.map((category) => (
           <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
               activeCategory === category.id
-                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/50 scale-105"
-                : "bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-700"
+                ? "bg-gradient-to-r from-yellow-500 to-orange-600 text-white shadow-lg shadow-yellow-500/50 scale-105"
+                : "bg-black/50 text-slate-300 hover:bg-black/70 border border-slate-700"
             }`}
           >
             {category.name}
@@ -259,14 +257,17 @@ export default function GameGrid() {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
         {filteredGames.map((game) => (
-          <div
+          <a
             key={game.id}
-            className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
+            href={game.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-black/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-700/50 hover:border-yellow-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 cursor-pointer"
           >
-            <div className="aspect-square bg-gradient-to-br from-slate-700 to-slate-800 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="aspect-square bg-slate-800 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
                   src={game.poster}
@@ -275,35 +276,24 @@ export default function GameGrid() {
                 />
               </div>
 
-              <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 bg-slate-900/80 backdrop-blur-sm rounded-full">
+              <div className="absolute top-3 right-3 flex items-center gap-0.5 px-1.5 py-0.5 bg-black/80 backdrop-blur-sm rounded-full">
                 <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                 <span className="text-xs text-white font-semibold">
                   {game.rating}
                 </span>
               </div>
 
-              <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <a
-                  href={game.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-semibold flex items-center gap-2 hover:shadow-lg transition-all duration-300 hover:scale-105"
-                >
-                  Play Now
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
             </div>
 
-            <div className="p-4">
-              <h3 className="text-white font-semibold text-lg mb-1 group-hover:text-cyan-400 transition-colors">
+            <div className="p-2">
+              <h3 className="text-white font-semibold text-base md:text-lg mb-1 group-hover:text-yellow-400 transition-colors">
                 {game.name}
               </h3>
               <p className="text-slate-400 text-sm capitalize">
                 {game.category}
               </p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
