@@ -236,9 +236,7 @@ export default function GameGrid() {
   return (
     <div className="container mx-auto px-4 py-4">
       <div className="text-center mb-6">
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-4">Game Collection</h2>
-
-        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mt-4"></div>
+        <h2 className="text-xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-4">Game Collection</h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -246,7 +244,7 @@ export default function GameGrid() {
           <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full font-normal text-sm md:text-base transition-all duration-300 ${
               activeCategory === category.id
                 ? "bg-gradient-to-r from-yellow-500 to-orange-600 text-white shadow-lg shadow-yellow-500/50 scale-105"
                 : "bg-black/50 text-slate-300 hover:bg-black/70 border border-slate-700"
@@ -286,7 +284,7 @@ export default function GameGrid() {
             </div>
 
             <div className="p-2">
-              <h3 className="text-white font-semibold text-base md:text-lg mb-1 group-hover:text-yellow-400 transition-colors">
+              <h3 className="text-white font-semibold text-xs md:text-sm mb-1 group-hover:text-yellow-400 transition-colors">
                 {game.name}
               </h3>
               <p className="text-slate-400 text-sm capitalize">

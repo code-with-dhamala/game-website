@@ -12,7 +12,7 @@ export default function TopWinners() {
       <div className="text-center mb-4">
         <div className="inline-flex items-center gap-2 mb-4">
           <Trophy className="w-6 h-6 text-yellow-400" />
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Top Winners Today</h2>
+          <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Top Winners Today</h2>
         </div>
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto"></div>
       </div>
@@ -29,10 +29,10 @@ export default function TopWinners() {
                 : 'border-orange-700/50'
             }`}
           >
-            <p className="text-white font-semibold text-base">{winner.name}</p>
+            <p className="text-white font-semibold text-sm md:text-base">{winner.name}</p>
             <div className="flex items-center gap-1">
               <TrendingUp className="w-4 h-4 text-yellow-400" />
-              <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-base md:text-lg font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 ${winner.amount}
               </span>
             </div>

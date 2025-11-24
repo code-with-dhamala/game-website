@@ -10,8 +10,8 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Gamepad2 className="w-6 h-6 text-yellow-400" />
-              <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                GameVerse
+              <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                SolomonCasino
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -19,34 +19,9 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h4 className="text-yellow-400 font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {['About Us', 'Games', 'Winners', 'Support'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors text-sm">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div>
-            <h4 className="text-yellow-400 font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2">
-              {['Terms of Service', 'Privacy Policy', 'Responsible Gaming', 'Fair Play'].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-slate-400 hover:text-yellow-400 transition-colors text-sm">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-yellow-400 font-semibold mb-4">Payment Methods</h4>
+            <h4 className="text-yellow-400 font-normal text-sm md:text-base mb-4">Payment Methods</h4>
             <p className="text-slate-400 text-sm mb-4">We Accept</p>
             <div className="flex gap-3">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg">
@@ -64,7 +39,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © 2024 GameVerse. All rights reserved.
+            © 2024 SolomonCasino. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">
