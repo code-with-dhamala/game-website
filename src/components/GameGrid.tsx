@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import fireKirin from "../assets/fireKirin.png"
 import orionStars from "../assets/orionStars.png";
 import juwaImage from "../assets/juwa.png";
@@ -27,7 +27,7 @@ const games = [
   {
     id: 1,
     name: "Fire Kirin",
-    category: "popular",
+    category: "slots",
     rating: 4.8,
     url: "http://start.firekirin.xyz:8580/",
     poster: fireKirin,
@@ -67,7 +67,7 @@ const games = [
   {
     id: 6,
     name: "Vegas Sweep",
-    category: "slots",
+    category: "popular",
     rating: 4.5,
     url: "https://vegassweeps.io/",
     poster: vegasSweep,
@@ -83,7 +83,7 @@ const games = [
   {
     id: 8,
     name: "Ultra Panda",
-    category: "popular",
+    category: "slots",
     rating: 4.9,
     url: "https://www.ultrapanda.mobi/index.html",
     poster: ultraPanda,
@@ -131,7 +131,7 @@ const games = [
   {
     id: 14,
     name: "Mafia 777",
-    category: "popular",
+    category: "slots",
     rating: 4.6,
     url: "https://www.mafia77777.com/m",
     poster: mafia7,
@@ -163,7 +163,7 @@ const games = [
   {
     id: 18,
     name: "Golden Dragon City",
-    category: "popular",
+    category: "slots",
     rating: 4.9,
     url: "https://web.goldendragoncity.com/SSLobby/m5495.1/web-mobile/index.html?",
     poster: goldenDragon,

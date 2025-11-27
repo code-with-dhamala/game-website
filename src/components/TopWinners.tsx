@@ -1,12 +1,38 @@
 import { Trophy, TrendingUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const winners = [
-  { rank: 1, name: 'Linda Peach', amount: 250.00 },
-  { rank: 2, name: 'Amanda Rey', amount: 200.00 },
-  { rank: 3, name: 'Matthew Anderson', amount: 150.00 },
+const nameLists = [
+  ['Linda Peach', 'Amanda Rey', 'Matthew Anderson'],
+  ['John Doe', 'Jane Smith', 'Peter Jones'],
+  ['Chris Green', 'Emily White', 'David Black'],
+  ['Sarah Miller', 'Michael Brown', 'Jessica Davis'],
 ];
 
+const generateWinners = (nameList: string[]) => {
+  return [
+    { rank: 1, name: nameList[0], amount: (Math.random() * (800 - 500) + 500).toFixed(2) },
+    { rank: 2, name: nameList[1], amount: (Math.random() * (500 - 300) + 300).toFixed(2) },
+    { rank: 3, name: nameList[2], amount: (Math.random() * (300 - 200) + 200).toFixed(2) },
+  ];
+};
+
 export default function TopWinners() {
+  const [winners, setWinners] = useState(generateWinners(nameLists[0]));
+
+  useEffect(() => {
+    const updateWinners = () => {
+      const currentHour = new Date().getHours();
+      const listIndex = Math.floor(currentHour / 5) % nameLists.length;
+      const newWinners = generateWinners(nameLists[listIndex]);
+      setWinners(newWinners);
+    };
+
+    updateWinners();
+    const intervalId = setInterval(updateWinners, 3600000); // Check every hour
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-4">
       <div className="text-center mb-4">
